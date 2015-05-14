@@ -29,11 +29,11 @@ CREATE TABLE IF NOT EXISTS moto
 	fecha DATE,
 	id_vendedor INT UNSIGNED,
     	INDEX (id_vendedor),
-    	FOREIGN KEY (id_vendedor) REFERENCES Vendedor (id)
+    	FOREIGN KEY (id_vendedor) REFERENCES vendedor (id)
 	ON DELETE NO ACTION ON UPDATE NO ACTION,
 	id_accesorio INT UNSIGNED,
 	INDEX (id_accesorio),
-	FOREIGN KEY (id_accesorio) REFERENCES Accesorio (id)
+	FOREIGN KEY (id_accesorio) REFERENCES accesorio (id)
 	ON DELETE NO ACTION ON UPDATE NO ACTION
 );
 CREATE TABLE IF NOT EXISTS cliente
@@ -47,17 +47,17 @@ CREATE TABLE IF NOT EXISTS cliente
 	telefono INT,
 	id_moto INT UNSIGNED,
     	INDEX (id_moto),
-    	FOREIGN KEY (id_moto) REFERENCES Moto (id)
+    	FOREIGN KEY (id_moto) REFERENCES moto (id)
 	ON DELETE NO ACTION ON UPDATE NO ACTION
 );
 CREATE TABLE IF NOT EXISTS moto_accesorio
 (
 	id_moto INT UNSIGNED,
     	INDEX (id_moto),
-    	FOREIGN KEY (id_moto) REFERENCES Moto (id)
+    	FOREIGN KEY (id_moto) REFERENCES moto (id)
 	ON DELETE NO ACTION ON UPDATE NO ACTION,
 	id_accesorio INT UNSIGNED,
 	INDEX (id_accesorio),
-	FOREIGN KEY (id_accesorio) REFERENCES Accesorio (id)
+	FOREIGN KEY (id_accesorio) REFERENCES accesorio (id)
 	ON DELETE NO ACTION ON UPDATE NO ACTION
 );
